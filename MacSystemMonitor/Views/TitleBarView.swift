@@ -36,7 +36,7 @@ struct TitleBarView: View {
                 Slider(value: $opacity, in: 0.2...1.0)
                     .frame(width: 80)
                     .onChange(of: opacity) { _, newValue in
-                        NSApp.keyWindow?.alphaValue = newValue
+                        NSApp.windows.first { $0.level == .floating }?.alphaValue = newValue
                     }
 
                 Button {
