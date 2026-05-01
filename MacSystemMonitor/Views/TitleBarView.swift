@@ -21,7 +21,7 @@ struct TitleBarView: View {
             WindowDragArea()
 
             HStack(spacing: 8) {
-                Text("Mac System Monitor")
+                Text("Peekr")
                     .font(.headline)
                     .foregroundStyle(.primary)
                     .lineLimit(1)

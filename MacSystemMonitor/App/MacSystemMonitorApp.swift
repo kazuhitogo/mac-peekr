@@ -1,7 +1,7 @@
 import SwiftUI
 
 @main
-struct MacSystemMonitorApp: App {
+struct PeekrApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
 
     var body: some Scene {

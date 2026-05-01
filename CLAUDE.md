@@ -1,4 +1,4 @@
-# Mac System Monitor
+# Peekr
 
 macOSシステム監視デスクトップアプリ。開発中。
 
