@@ -20,7 +20,9 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     private func setupStatusItem() {
         statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
         guard let button = statusItem?.button else { return }
-        button.image = NSImage(systemSymbolName: "gauge", accessibilityDescription: "System Monitor")
+        let icon = NSApp.applicationIconImage.copy() as! NSImage
+        icon.size = NSSize(width: 18, height: 18)
+        button.image = icon
         button.action = #selector(toggleWindow)
         button.target = self
     }
