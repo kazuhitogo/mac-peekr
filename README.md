@@ -1,8 +1,10 @@
 # Peekr
 
-A floating widget app for real-time macOS system resource monitoring.
+A lightweight, always-on-top floating widget for monitoring your Mac's system resources in real time. Each widget is collapsible and reorderable — keep only what you need, exactly where you want it.
 
 [日本語](README.ja.md)
+
+<img src="images/image.png" alt="Peekr screenshot" width="320">
 
 ## Features
 
@@ -22,7 +24,7 @@ A floating widget app for real-time macOS system resource monitoring.
 ### Additional
 - Always-on-top floating window
 - Opacity slider (20–100%)
-- Collapsible widgets (state persists across restarts)
+- Collapsible widgets with inline summary (state persists across restarts)
 - Drag & drop widget reordering (persists)
 - Menu bar icon to show/hide window
 
