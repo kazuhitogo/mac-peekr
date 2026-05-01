@@ -1,53 +1,65 @@
 # Peekr
 
-macOS のシステムリソースをリアルタイムで監視するフローティングウィジェットアプリ。
+A floating widget app for real-time macOS system resource monitoring.
 
-## 機能
+[日本語](README.ja.md)
 
-- **CPU** — 使用率・コア別負荷
-- **Memory** — 使用量・圧縮・スワップ
-- **Storage** — 空き容量・使用率
-- **Battery** — 残量・充電状態・サイクル数
-- **GPU** — 使用率
-- **Network** — 送受信速度
-- **Wi-Fi** — SSID・信号強度・チャンネル
-- **Audio** — マイク波形・スピーカー波形・デバイス名
-- **Bluetooth** — ペアリング済みデバイス・接続/切断操作
-- **USB** — 接続デバイス一覧・VID:PID 表示
-- **Display** — 解像度・リフレッシュレート・輝度
-- **Thermal** — 温度状態（4 段階）
+## Features
 
-### その他
-- 常時最前面フローティングウィンドウ
-- 透明度スライダー (20〜100%)
-- ウィジェット折りたたみ（状態は再起動後も保持）
-- ドラッグ＆ドロップでウィジェット順序変更（保持）
-- メニューバーアイコンでウィンドウ表示/非表示
+- **CPU** — Usage, per-core load
+- **Memory** — Used, compressed, swap
+- **Storage** — Free space, usage ratio
+- **Battery** — Charge, charging state, cycle count
+- **GPU** — Utilization
+- **Network** — Upload/download speeds
+- **Wi-Fi** — SSID, signal strength, channel
+- **Audio** — Mic waveform, speaker waveform, device names
+- **Bluetooth** — Paired devices, connect/disconnect
+- **USB** — Connected devices, VID:PID
+- **Display** — Resolution, refresh rate, brightness
+- **Thermal** — Thermal state (4 levels)
 
-## 動作環境
+### Additional
+- Always-on-top floating window
+- Opacity slider (20–100%)
+- Collapsible widgets (state persists across restarts)
+- Drag & drop widget reordering (persists)
+- Menu bar icon to show/hide window
 
-- macOS 15.0 以降
-- Apple Silicon (M1 以降)
+## Requirements
 
-## インストール
+- macOS 15.0 or later
+- Apple Silicon (M1 or later)
 
-1. [Releases](https://github.com/kazuhitogo/mac-peekr/releases) から `Peekr.zip` をダウンロード
-2. 解凍して `Peekr.app` を `/Applications` に移動
-3. **初回起動時**: Gatekeeper のブロックが出るため、`Peekr.app` を**右クリック → 開く → 開く**
+## Install
 
-> 署名・公証なしのため、通常ダブルクリックでは開けない場合がある。  
-> ターミナルで解除する場合: `xattr -cr /Applications/Peekr.app`
+### Homebrew (recommended)
 
-### 権限
+```bash
+brew tap kazuhitogo/tap
+brew install --cask peekr
+```
 
-初回起動時に以下の権限を求める:
+### Manual
 
-| 権限 | 用途 |
-|------|------|
-| マイク | マイク波形表示 |
-| 画面収録 | スピーカー波形取得 (ScreenCaptureKit) |
+1. Download `Peekr.zip` from [Releases](https://github.com/kazuhitogo/mac-peekr/releases)
+2. Unzip and move `Peekr.app` to `/Applications`
+3. **First launch**: right-click → Open → Open (Gatekeeper bypass)
 
-## ソースからビルド
+Or via Terminal:
+
+```bash
+xattr -cr /Applications/Peekr.app
+```
+
+### Permissions
+
+Requested on first launch:
+
+- **Microphone** — mic waveform display
+- **Screen Recording** — speaker waveform via ScreenCaptureKit
+
+## Build from Source
 
 ```bash
 git clone https://github.com/kazuhitogo/mac-peekr.git
@@ -58,6 +70,6 @@ xcodebuild -project MacSystemMonitor.xcodeproj \
            -derivedDataPath build build
 ```
 
-## ライセンス
+## License
 
 [Apache License 2.0](LICENSE)
