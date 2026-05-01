@@ -1,13 +1,17 @@
 import SwiftUI
 
-struct WidgetCard<Content: View>: View {
+struct WidgetCard<Content: View, Summary: View>: View {
     let title: String
-    @ViewBuilder var content: () -> Content
+    @ViewBuilder let content: () -> Content
+    @ViewBuilder let collapsedSummary: () -> Summary
     @AppStorage private var isCollapsed: Bool
 
-    init(title: String, @ViewBuilder content: @escaping () -> Content) {
+    init(title: String,
+         @ViewBuilder collapsedSummary: @escaping () -> Summary,
+         @ViewBuilder content: @escaping () -> Content) {
         self.title = title
         self.content = content
+        self.collapsedSummary = collapsedSummary
         self._isCollapsed = AppStorage(wrappedValue: false, "widget_collapsed_\(title)")
     }
 
@@ -26,6 +30,10 @@ struct WidgetCard<Content: View>: View {
                         .foregroundStyle(.secondary)
                         .textCase(.uppercase)
                     Spacer()
+                    if isCollapsed {
+                        collapsedSummary()
+                            .font(.caption2.monospacedDigit())
+                    }
                 }
             }
             .buttonStyle(.plain)
@@ -36,5 +44,11 @@ struct WidgetCard<Content: View>: View {
         }
         .padding(10)
         .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 10))
+    }
+}
+
+extension WidgetCard where Summary == EmptyView {
+    init(title: String, @ViewBuilder content: @escaping () -> Content) {
+        self.init(title: title, collapsedSummary: { EmptyView() }, content: content)
     }
 }

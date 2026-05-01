@@ -4,7 +4,9 @@ struct CPUWidget: View {
     let cpu: CPUService
 
     var body: some View {
-        WidgetCard(title: "CPU") {
+        WidgetCard(title: "CPU", collapsedSummary: {
+            Text(String(format: "%.1f%%", (cpu.userPercent + cpu.sysPercent) * 100))
+        }) {
             LineChartView(data: cpu.history, color: .green)
 
             HStack(alignment: .top) {

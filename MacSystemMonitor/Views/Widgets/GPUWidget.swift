@@ -4,7 +4,9 @@ struct GPUWidget: View {
     let gpu: GPUService
 
     var body: some View {
-        WidgetCard(title: "GPU") {
+        WidgetCard(title: "GPU", collapsedSummary: {
+            Text("\(gpu.deviceUtilization)%")
+        }) {
             LineChartView(data: gpu.history, color: .purple)
 
             HStack(alignment: .top) {

@@ -4,7 +4,12 @@ struct DisplayWidget: View {
     let display: DisplayService
 
     var body: some View {
-        WidgetCard(title: "Displays") {
+        WidgetCard(title: "Displays", collapsedSummary: {
+            let main = display.displays.first(where: { $0.isMain }) ?? display.displays.first
+            if let d = main {
+                Text("\(Int(d.resolution.width))×\(Int(d.resolution.height))")
+            }
+        }) {
             if display.displays.isEmpty {
                 Text("No displays").font(.caption2).foregroundStyle(.secondary)
             } else {

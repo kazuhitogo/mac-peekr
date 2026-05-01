@@ -4,7 +4,11 @@ struct NetworkWidget: View {
     let network: NetworkService
 
     var body: some View {
-        WidgetCard(title: "Network") {
+        WidgetCard(title: "Network", collapsedSummary: {
+            let up   = network.interfaces.reduce(0.0) { $0 + $1.uploadSpeed }
+            let down = network.interfaces.reduce(0.0) { $0 + $1.downloadSpeed }
+            Text("↑\(ByteFormatter.formatSpeed(up)) ↓\(ByteFormatter.formatSpeed(down))")
+        }) {
             if network.interfaces.isEmpty {
                 Text("No interfaces").font(.caption2).foregroundStyle(.secondary)
             } else {

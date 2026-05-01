@@ -4,7 +4,10 @@ struct BluetoothWidget: View {
     let bluetooth: BluetoothService
 
     var body: some View {
-        WidgetCard(title: "Bluetooth") {
+        WidgetCard(title: "Bluetooth", collapsedSummary: {
+            let connected = bluetooth.devices.filter(\.isConnected).count
+            Text("\(connected) connected")
+        }) {
             if bluetooth.devices.isEmpty {
                 Text("No paired devices")
                     .font(.caption2)

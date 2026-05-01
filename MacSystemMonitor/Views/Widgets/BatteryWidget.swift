@@ -4,7 +4,15 @@ struct BatteryWidget: View {
     let battery: BatteryService
 
     var body: some View {
-        WidgetCard(title: "Battery") {
+        WidgetCard(title: "Battery", collapsedSummary: {
+            if battery.hasBattery {
+                Text(String(format: "%.0f%% · %@",
+                            battery.chargePercent * 100,
+                            battery.isCharging ? "Charging" : battery.isOnAC ? "AC" : "Discharging"))
+            } else {
+                Text("AC Power")
+            }
+        }) {
             if !battery.hasBattery {
                 HStack {
                     Image(systemName: "powerplug.fill")

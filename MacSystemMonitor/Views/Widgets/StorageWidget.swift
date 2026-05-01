@@ -4,7 +4,11 @@ struct StorageWidget: View {
     let storage: StorageService
 
     var body: some View {
-        WidgetCard(title: "Storage") {
+        WidgetCard(title: "Storage", collapsedSummary: {
+            if let vol = storage.volumes.first {
+                Text(String(format: "%.0f%%", vol.usageRatio * 100))
+            }
+        }) {
             if storage.volumes.isEmpty {
                 Text("No volumes").font(.caption2).foregroundStyle(.secondary)
             } else {

@@ -4,7 +4,9 @@ struct MemoryWidget: View {
     let memory: MemoryService
 
     var body: some View {
-        WidgetCard(title: "RAM") {
+        WidgetCard(title: "RAM", collapsedSummary: {
+            Text(String(format: "%.1f / %.0f GB", memory.usedGB, memory.totalGB))
+        }) {
             StackedBarView(
                 segments: [
                     .init(value: memory.usedGB,       color: .blue,   label: "Used"),

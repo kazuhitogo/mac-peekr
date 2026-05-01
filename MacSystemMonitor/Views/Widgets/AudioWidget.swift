@@ -4,7 +4,13 @@ struct AudioWidget: View {
     let audio: AudioService
 
     var body: some View {
-        WidgetCard(title: "Audio") {
+        WidgetCard(title: "Audio", collapsedSummary: {
+            let mic = audio.micAvailable ? (audio.micDeviceName.isEmpty ? "Mic" : audio.micDeviceName) : "No Mic"
+            let spk = audio.speakerAvailable ? (audio.speakerDeviceName.isEmpty ? "Speaker" : audio.speakerDeviceName) : "No Speaker"
+            Text("\(mic) · \(spk)")
+                .lineLimit(1)
+                .truncationMode(.middle)
+        }) {
             waveformSection(
                 label: "Mic",
                 deviceName: audio.micDeviceName,

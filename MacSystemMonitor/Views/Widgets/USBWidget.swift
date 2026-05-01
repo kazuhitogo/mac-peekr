@@ -4,7 +4,9 @@ struct USBWidget: View {
     let usb: USBService
 
     var body: some View {
-        WidgetCard(title: "USB") {
+        WidgetCard(title: "USB", collapsedSummary: {
+            Text("\(usb.devices.count) devices")
+        }) {
             if usb.devices.isEmpty {
                 Text("No devices")
                     .font(.caption2)

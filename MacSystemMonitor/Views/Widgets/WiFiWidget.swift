@@ -4,7 +4,10 @@ struct WiFiWidget: View {
     let wifi: WiFiService
 
     var body: some View {
-        WidgetCard(title: "Wi-Fi") {
+        WidgetCard(title: "Wi-Fi", collapsedSummary: {
+            Text(wifi.isConnected ? wifi.ssid : "Disconnected")
+                .foregroundStyle(wifi.isConnected ? .primary : .secondary)
+        }) {
             if wifi.isConnected {
                 HStack(alignment: .top) {
                     VStack(alignment: .leading, spacing: 2) {
