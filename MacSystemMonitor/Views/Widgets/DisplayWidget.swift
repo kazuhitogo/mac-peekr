@@ -31,6 +31,11 @@ struct DisplayWidget: View {
                             Text("\(d.refreshRate) Hz")
                                 .font(.caption2.monospacedDigit())
                                 .foregroundStyle(.secondary)
+                            if let b = d.brightness {
+                                Text(String(format: "%.0f%% bright", b * 100))
+                                    .font(.caption2.monospacedDigit())
+                                    .foregroundStyle(.secondary)
+                            }
                         }
                         .frame(maxWidth: .infinity, alignment: .leading)
                         if d.id != display.displays.last?.id {

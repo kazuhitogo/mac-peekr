@@ -11,7 +11,11 @@ final class BatteryService {
     private(set) var cycleCount: Int = 0
     private(set) var healthStatus: String = ""
     private(set) var hasBattery: Bool = false
-    private(set) var degradationPercent: Double? = nil  // nil = 取得不可
+    private(set) var degradationPercent: Double? = nil
+    private(set) var voltageV: Double? = nil
+    private(set) var currentMA: Int? = nil
+    private(set) var powerW: Double? = nil
+    private(set) var adapterWatts: Int? = nil
 
     private nonisolated(unsafe) var timer: Timer?
 
@@ -67,5 +71,13 @@ final class BatteryService {
            designCap > 0 {
             degradationPercent = Double(rawMax) / Double(designCap) * 100.0
         }
+
+        if let mv = dict["Voltage"] as? Int { voltageV = Double(mv) / 1000.0 }
+        if let ma = dict["Amperage"] as? Int { currentMA = ma }
+        if let v = voltageV, let ma = currentMA {
+            powerW = v * abs(Double(ma)) / 1000.0
+        }
+        if let adapter = dict["AdapterDetails"] as? [String: Any],
+           let w = adapter["Watts"] as? Int { adapterWatts = w }
     }
 }

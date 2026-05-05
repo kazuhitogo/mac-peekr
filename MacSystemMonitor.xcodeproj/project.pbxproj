@@ -48,6 +48,10 @@
 		024332F6D75549DDB6932CDB /* AudioWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795CADCAC59745779E2D7EBD /* AudioWidget.swift */; };
 		A688755F61624DB891FBBEFA /* BluetoothWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004E2C2F30FE4F2082EB35ED /* BluetoothWidget.swift */; };
 		DFA8426E1A164283B1DE8869 /* USBWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72E91E3DAB545D38CDB3A43 /* USBWidget.swift */; };
+		440BE123030843A599E2D760 /* SMCService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0C9D1843B2463E8C86FA1B /* SMCService.swift */; };
+		4B34E1AB1FD44D068F4688B9 /* SMCWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7341A101E84874B80D82C4 /* SMCWidget.swift */; };
+		1F81F4AD067B4A9AA2BB81BC /* AmbientLightService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C18B0E55ACE430BB6324A37 /* AmbientLightService.swift */; };
+		AAD2C0DF58F54A1DBCB55BA8 /* AmbientLightWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CA8DB6D5634C8E8990C3D5 /* AmbientLightWidget.swift */; };
 		834E6DC2333146CA893B404B /* CoreWLAN.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53C8DD80D03B4C5DA8FD627B /* CoreWLAN.framework */; };
 		C372B69E8F344ACDB825CD7F /* IOBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6E8ED45EB784D3B970E8AB4 /* IOBluetooth.framework */; };
 		8C62B7E4D5BD4D88848EA5E7 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 517DB32398004700B37710B5 /* AVFoundation.framework */; };
@@ -94,11 +98,15 @@
 		8EC1CFED3FC54108BEC8B373 /* AudioService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioService.swift; sourceTree = "<group>"; };
 		F87E6C6E672948DE9A91795B /* BluetoothService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothService.swift; sourceTree = "<group>"; };
 		2412E8B45748451D8289F263 /* USBService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USBService.swift; sourceTree = "<group>"; };
+		6B0C9D1843B2463E8C86FA1B /* SMCService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMCService.swift; sourceTree = "<group>"; };
+		7C18B0E55ACE430BB6324A37 /* AmbientLightService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmbientLightService.swift; sourceTree = "<group>"; };
 		5759368395BF45D383B68BCA /* WaveformView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveformView.swift; sourceTree = "<group>"; };
 		965BB46CEB0F458993D3C38A /* WiFiWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WiFiWidget.swift; sourceTree = "<group>"; };
 		795CADCAC59745779E2D7EBD /* AudioWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioWidget.swift; sourceTree = "<group>"; };
 		004E2C2F30FE4F2082EB35ED /* BluetoothWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothWidget.swift; sourceTree = "<group>"; };
 		F72E91E3DAB545D38CDB3A43 /* USBWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USBWidget.swift; sourceTree = "<group>"; };
+		BA7341A101E84874B80D82C4 /* SMCWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMCWidget.swift; sourceTree = "<group>"; };
+		77CA8DB6D5634C8E8990C3D5 /* AmbientLightWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmbientLightWidget.swift; sourceTree = "<group>"; };
 		53C8DD80D03B4C5DA8FD627B /* CoreWLAN.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreWLAN.framework; path = System/Library/Frameworks/CoreWLAN.framework; sourceTree = SDKROOT; };
 		B6E8ED45EB784D3B970E8AB4 /* IOBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOBluetooth.framework; path = System/Library/Frameworks/IOBluetooth.framework; sourceTree = SDKROOT; };
 		517DB32398004700B37710B5 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -194,6 +202,8 @@
 				8EC1CFED3FC54108BEC8B373 /* AudioService.swift */,
 				F87E6C6E672948DE9A91795B /* BluetoothService.swift */,
 				2412E8B45748451D8289F263 /* USBService.swift */,
+				6B0C9D1843B2463E8C86FA1B /* SMCService.swift */,
+				7C18B0E55ACE430BB6324A37 /* AmbientLightService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -236,6 +246,8 @@
 				795CADCAC59745779E2D7EBD /* AudioWidget.swift */,
 				004E2C2F30FE4F2082EB35ED /* BluetoothWidget.swift */,
 				F72E91E3DAB545D38CDB3A43 /* USBWidget.swift */,
+				BA7341A101E84874B80D82C4 /* SMCWidget.swift */,
+				77CA8DB6D5634C8E8990C3D5 /* AmbientLightWidget.swift */,
 				44BC9B27581D4092907DEC85 /* DisplayWidget.swift */,
 				CEA807DDD3AB402BB78E7045 /* ThermalWidget.swift */,
 			);
@@ -357,6 +369,10 @@
 				024332F6D75549DDB6932CDB /* AudioWidget.swift in Sources */,
 				A688755F61624DB891FBBEFA /* BluetoothWidget.swift in Sources */,
 				DFA8426E1A164283B1DE8869 /* USBWidget.swift in Sources */,
+				440BE123030843A599E2D760 /* SMCService.swift in Sources */,
+				4B34E1AB1FD44D068F4688B9 /* SMCWidget.swift in Sources */,
+				1F81F4AD067B4A9AA2BB81BC /* AmbientLightService.swift in Sources */,
+				AAD2C0DF58F54A1DBCB55BA8 /* AmbientLightWidget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

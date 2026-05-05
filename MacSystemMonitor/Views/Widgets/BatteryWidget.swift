@@ -37,6 +37,19 @@ struct BatteryWidget: View {
                         if !battery.healthStatus.isEmpty {
                             infoRow("Health", value: battery.healthStatus)
                         }
+                        if let v = battery.voltageV {
+                            infoRow("Voltage", value: String(format: "%.2f V", v))
+                        }
+                        if let ma = battery.currentMA {
+                            let sign = ma >= 0 ? "+" : ""
+                            infoRow("Current", value: "\(sign)\(ma) mA")
+                        }
+                        if let w = battery.powerW {
+                            infoRow("Power", value: String(format: "%.1f W", w))
+                        }
+                        if let aw = battery.adapterWatts {
+                            infoRow("Adapter", value: "\(aw) W")
+                        }
                     }
                 }
             }
