@@ -27,17 +27,11 @@ struct SMCWidget: View {
 
                     VStack(alignment: .leading, spacing: 3) {
                         if let w = smc.systemPowerW {
-                            Label("Power", systemImage: "bolt")
-                                .font(.caption2).foregroundStyle(.secondary)
-                            Text(String(format: "%.1f W", w))
-                                .font(.caption2.monospacedDigit())
+                            statRow("Power", value: String(format: "%.1f W", w))
                         }
                         if smc.fanCount > 0 {
-                            Label("Fans", systemImage: "fan")
-                                .font(.caption2).foregroundStyle(.secondary)
-                                .padding(.top, smc.systemPowerW != nil ? 4 : 0)
-                            if let rpm = smc.fan0RPM { fanRow("Fan 0", rpm: rpm) }
-                            if let rpm = smc.fan1RPM { fanRow("Fan 1", rpm: rpm) }
+                            if let rpm = smc.fan0RPM { statRow("Fan 0", value: "\(rpm) RPM") }
+                            if let rpm = smc.fan1RPM { statRow("Fan 1", value: "\(rpm) RPM") }
                         }
                     }
                 }
@@ -64,10 +58,10 @@ struct SMCWidget: View {
     }
 
     @ViewBuilder
-    private func fanRow(_ label: String, rpm: Int) -> some View {
+    private func statRow(_ label: String, value: String) -> some View {
         HStack(spacing: 4) {
             Text(label).font(.caption2).foregroundStyle(.secondary).frame(width: 36, alignment: .leading)
-            Text("\(rpm) RPM").font(.caption2.monospacedDigit())
+            Text(value).font(.caption2.monospacedDigit())
         }
     }
 

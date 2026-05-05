@@ -50,6 +50,8 @@
 		DFA8426E1A164283B1DE8869 /* USBWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72E91E3DAB545D38CDB3A43 /* USBWidget.swift */; };
 		440BE123030843A599E2D760 /* SMCService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0C9D1843B2463E8C86FA1B /* SMCService.swift */; };
 		4B34E1AB1FD44D068F4688B9 /* SMCWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7341A101E84874B80D82C4 /* SMCWidget.swift */; };
+		A42D3DACC25246D28EB99ECB /* TemperatureWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D7254BD4BE44666BCDE767E /* TemperatureWidget.swift */; };
+		E44C465266AC4691BE281CCF /* PowerWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344490DB730A464BBF8CC77E /* PowerWidget.swift */; };
 		1F81F4AD067B4A9AA2BB81BC /* AmbientLightService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C18B0E55ACE430BB6324A37 /* AmbientLightService.swift */; };
 		AAD2C0DF58F54A1DBCB55BA8 /* AmbientLightWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CA8DB6D5634C8E8990C3D5 /* AmbientLightWidget.swift */; };
 		834E6DC2333146CA893B404B /* CoreWLAN.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53C8DD80D03B4C5DA8FD627B /* CoreWLAN.framework */; };
@@ -106,6 +108,8 @@
 		004E2C2F30FE4F2082EB35ED /* BluetoothWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothWidget.swift; sourceTree = "<group>"; };
 		F72E91E3DAB545D38CDB3A43 /* USBWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USBWidget.swift; sourceTree = "<group>"; };
 		BA7341A101E84874B80D82C4 /* SMCWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMCWidget.swift; sourceTree = "<group>"; };
+		5D7254BD4BE44666BCDE767E /* TemperatureWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureWidget.swift; sourceTree = "<group>"; };
+		344490DB730A464BBF8CC77E /* PowerWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerWidget.swift; sourceTree = "<group>"; };
 		77CA8DB6D5634C8E8990C3D5 /* AmbientLightWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmbientLightWidget.swift; sourceTree = "<group>"; };
 		53C8DD80D03B4C5DA8FD627B /* CoreWLAN.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreWLAN.framework; path = System/Library/Frameworks/CoreWLAN.framework; sourceTree = SDKROOT; };
 		B6E8ED45EB784D3B970E8AB4 /* IOBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOBluetooth.framework; path = System/Library/Frameworks/IOBluetooth.framework; sourceTree = SDKROOT; };
@@ -247,6 +251,8 @@
 				004E2C2F30FE4F2082EB35ED /* BluetoothWidget.swift */,
 				F72E91E3DAB545D38CDB3A43 /* USBWidget.swift */,
 				BA7341A101E84874B80D82C4 /* SMCWidget.swift */,
+				5D7254BD4BE44666BCDE767E /* TemperatureWidget.swift */,
+				344490DB730A464BBF8CC77E /* PowerWidget.swift */,
 				77CA8DB6D5634C8E8990C3D5 /* AmbientLightWidget.swift */,
 				44BC9B27581D4092907DEC85 /* DisplayWidget.swift */,
 				CEA807DDD3AB402BB78E7045 /* ThermalWidget.swift */,
@@ -371,6 +377,8 @@
 				DFA8426E1A164283B1DE8869 /* USBWidget.swift in Sources */,
 				440BE123030843A599E2D760 /* SMCService.swift in Sources */,
 				4B34E1AB1FD44D068F4688B9 /* SMCWidget.swift in Sources */,
+				A42D3DACC25246D28EB99ECB /* TemperatureWidget.swift in Sources */,
+				E44C465266AC4691BE281CCF /* PowerWidget.swift in Sources */,
 				1F81F4AD067B4A9AA2BB81BC /* AmbientLightService.swift in Sources */,
 				AAD2C0DF58F54A1DBCB55BA8 /* AmbientLightWidget.swift in Sources */,
 			);

@@ -2,7 +2,7 @@ import SwiftUI
 import UniformTypeIdentifiers
 
 enum WidgetID: String, CaseIterable, Identifiable, Equatable {
-    case cpu, memory, storage, battery, gpu, network, wifi, audio, bluetooth, usb, display, smc, ambientLight
+    case cpu, memory, storage, battery, gpu, network, wifi, audio, bluetooth, usb, display, temperature, power, ambientLight
     var id: String { rawValue }
 
     static func decode(_ string: String) -> [WidgetID] {
@@ -100,7 +100,8 @@ struct ContentView: View {
         case .bluetooth: BluetoothWidget(bluetooth: vm.bluetooth)
         case .usb:       USBWidget(usb: vm.usb)
         case .display:      DisplayWidget(display: vm.display)
-        case .smc:          SMCWidget(smc: vm.smc, thermal: vm.thermal)
+        case .temperature:  TemperatureWidget(smc: vm.smc, thermal: vm.thermal)
+        case .power:        PowerWidget(smc: vm.smc)
         case .ambientLight: AmbientLightWidget(ambientLight: vm.ambientLight)
         }
     }
